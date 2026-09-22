@@ -1,32 +1,34 @@
-# GHDown - GitHub 高速下载
+# UserScripts 仓库
 
-[![MIT License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![GreasyFork](https://img.shields.io/badge/GreasyFork-GHDown-blue)](https://greasyfork.org/)
+我的个人 GreasyFork 用户脚本合集，每个脚本一个独立目录。
 
-## ✨ 功能特点
+## 📦 脚本列表
 
-- 🚀 **Release 文件加速**：exe、msi、dmg、apk 等安装包
-- 📦 **源码包加速**：zip、tar.gz、7z 等压缩包
-- 📄 **Raw 文件加速**：单个脚本、配置文件
-- 🎯 **精准匹配**：只加速下载链接，不干扰页面导航
-- 🔄 **镜像切换**：支持多个镜像源，一键切换
+| 脚本 | 说明 | 安装 |
+| --- | --- | --- |
+| [GitHub 高速下载](GHDown/GHDown.user.js) | GitHub 下载加速：Release 文件、源码包、Raw 文件一键提速，支持多镜像切换 | [GreasyFork](https://greasyfork.org/) / [源码](https://raw.githubusercontent.com/wxmyyds/GHDown/main/GHDown/GHDown.user.js) |
+| [GitHub Release Asset Highlighter](github-release-asset-highlighter/github-release-asset-highlighter.user.js) | 给 GitHub Release 产物按架构、平台、发行版做高亮徽章区分 | [GreasyFork](https://greasyfork.org/) / [源码](https://raw.githubusercontent.com/wxmyyds/GHDown/main/github-release-asset-highlighter/github-release-asset-highlighter.user.js) |
 
 ## 📥 安装方法
 
-1. 安装 Tampermonkey 浏览器扩展
-2. [点击此处安装脚本](https://raw.githubusercontent.com/wxmyyds/GHDown/main/GHDown.user.js)
-3. 打开任意 GitHub 仓库，下载链接自动加速
+1. 安装浏览器用户脚本管理器（推荐 [Tampermonkey](https://www.tampermonkey.net/)）
+2. 打开上表中任意脚本的 **源码** 链接，或通过 GreasyFork 页面安装
+3. 脚本自动生效
 
-## ⚙️ 使用说明
+## 🗂️ 目录结构
 
-- 脚本自动运行，无需任何配置
-- 加速后的链接旁会显示 ⚡ 图标
+```
+├── GHDown/                          # GitHub 高速下载
+│   └── GHDown.user.js
+├── github-release-asset-highlighter/ # Release 产物高亮
+│   └── github-release-asset-highlighter.user.js
+└── README.md
+```
 
-## 📌 注意事项
+## 🔄 更新维护
 
-- 仅加速真正的下载链接，不影响页面导航
-- 如遇下载失败，可尝试切换其他镜像
-- 建议配合 IDM 使用以获得最佳体验
+- 脚本代码与 GreasyFork 发布版保持同步，以本仓库为源码
+- 问题反馈请到 [Issues](https://github.com/wxmyyds/GHDown/issues)
 
 ## 📄 开源协议
 
