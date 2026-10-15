@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         GitHub 高速下载
 // @namespace    https://github.com/wxmyyds
-// @version      4.4.0
+// @version      4.4.1
 // @description  GitHub 下载加速：Release文件、源码包、Raw文件一键提速
 // @author       wxmyyds
 // @match        https://github.com/*
 // @match        https://gist.github.com/*
 // @icon         https://github.githubassets.com/favicons/favicon.svg
-// @homepageURL  https://github.com/wxmyyds/GHDown
-// @supportURL   https://github.com/wxmyyds/GHDown/issues
+// @homepageURL  https://github.com/wxmyyds/UserScripts
+// @supportURL   https://github.com/wxmyyds/UserScripts/issues
 // @license      MIT
 // @grant        GM_getValue
 // @grant        GM_setValue
@@ -263,7 +263,7 @@
 
     async function pickFastestProxy() {
         console.log('[GHDown] Probing mirrors...');
-        const testFile = 'https://raw.githubusercontent.com/wxmyyds/GHDown/main/LICENSE';
+        const testFile = 'https://raw.githubusercontent.com/wxmyyds/UserScripts/main/LICENSE';
         const results = await Promise.all(PROXY_LIST.map((p, i) => probe(p.url + testFile, i)));
         const reachable = results.filter(r => r.ms !== Infinity).sort((a, b) => a.ms - b.ms);
         if (!reachable.length) {

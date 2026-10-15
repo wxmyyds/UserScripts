@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         GitHub Release Asset Highlighter
 // @namespace    https://github.com/wxmyyds
-// @version      2.4.0
+// @version      2.4.1
 // @description  给 GitHub 发行版产物做高亮区分：架构(32/64位, x86/ARM/MIPS/PPC/s390x)、平台(Win/Mac/Linux/Android/BSD)、发行版(Arch/Debian/Fedora/openSUSE/Alpine/NixOS/Gentoo/Void/Solus/OpenWrt/Flatpak/Snap/AppImage/Archive)
 // @author       wxmyyds
 // @match        https://github.com/*
-// @homepageURL  https://github.com/wxmyyds/GHDown
-// @supportURL   https://github.com/wxmyyds/GHDown/issues
+// @homepageURL  https://github.com/wxmyyds/UserScripts
+// @supportURL   https://github.com/wxmyyds/UserScripts/issues
 // @license      MIT
 // @grant        GM_addStyle
 // @run-at       document-end
