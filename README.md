@@ -7,7 +7,7 @@
 | 脚本 | 说明 | 安装 |
 | --- | --- | --- |
 | [GitHub 高速下载](GHDown/GHDown.user.js) | GitHub 下载加速：Release 文件、源码包、Raw 文件一键提速，支持多镜像切换 | [GreasyFork](https://greasyfork.org/) / [源码](https://raw.githubusercontent.com/wxmyyds/GHDown/main/GHDown/GHDown.user.js) |
-| [GitHub Release Asset Highlighter](github-release-asset-highlighter/github-release-asset-highlighter.user.js) | 给 GitHub Release 产物按架构、平台、发行版做高亮徽章区分 | [GreasyFork](https://greasyfork.org/) / [源码](https://raw.githubusercontent.com/wxmyyds/GHDown/main/github-release-asset-highlighter/github-release-asset-highlighter.user.js) |
+| [GitHub Release Asset Highlighter](github-release-asset-highlighter/github-release-asset-highlighter.user.js) | 给 GitHub Release 产物按架构、平台、发行版做高亮徽章区分（仅在 Releases 页面生效） | [GreasyFork](https://greasyfork.org/) / [源码](https://raw.githubusercontent.com/wxmyyds/GHDown/main/github-release-asset-highlighter/github-release-asset-highlighter.user.js) |
 
 ## 📥 安装方法
 

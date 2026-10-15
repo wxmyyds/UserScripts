@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Release Asset Highlighter
 // @namespace    https://github.com/wxmyyds
-// @version      2.3.2
+// @version      2.4.0
 // @description  给 GitHub 发行版产物做高亮区分：架构(32/64位, x86/ARM/MIPS/PPC/s390x)、平台(Win/Mac/Linux/Android/BSD)、发行版(Arch/Debian/Fedora/openSUSE/Alpine/NixOS/Gentoo/Void/Solus/OpenWrt/Flatpak/Snap/AppImage/Archive)
 // @author       wxmyyds
 // @match        https://github.com/*
@@ -10,6 +10,7 @@
 // @license      MIT
 // @grant        GM_addStyle
 // @run-at       document-end
+// @noframes
 // ==/UserScript==
 
 (function () {
@@ -18,6 +19,23 @@
     const DOWNLOAD_MARKER = '/releases/download/';
     const LINK_SELECTOR = `a[href*="${DOWNLOAD_MARKER}"]:not([data-ghra])`;
     const ROW_SELECTOR = '.Box-row, li';
+
+    // 只在 Releases 页面生效。仓库首页/README、Issues、Code、gist 等页面
+    // 同样可能出现 /releases/download/ 直链（README 里的固定下载按钮最常见），
+    // 在那里加左边框/徽章属于误伤，必须按路径排除。
+    // 覆盖：/owner/repo/releases、/releases/tag/<tag>、/releases/latest、
+    //       /releases/expanded_assets/<tag>（产物列表是懒加载片段，路径同源）
+    const RELEASE_PAGE_RE = /^\/[^/]+\/[^/]+\/releases(?:\/(?:tag\/[^/]+|latest|expanded_assets\/[^/]+))?\/?$/;
+    let cachedPath = null;
+    let cachedIsRelease = false;
+    function isReleasePage() {
+        const path = location.pathname;
+        if (path !== cachedPath) {
+            cachedPath = path;
+            cachedIsRelease = RELEASE_PAGE_RE.test(path);
+        }
+        return cachedIsRelease;
+    }
 
     // ==================== 配置 ====================
     // c/fg：浅色；cDark/fgDark：深色。徽章是实心 pill，
@@ -340,6 +358,7 @@ ${platformVars()}${badgeVars(ARCH_BADGE)}${badgeVars(PKG_BADGE)}
     }
 
     function scanAll() {
+        if (!isReleasePage()) return;
         scanRoot(document);
     }
 
@@ -366,6 +385,9 @@ ${platformVars()}${badgeVars(ARCH_BADGE)}${badgeVars(PKG_BADGE)}
     // 注意：单条记录内可能既有链接又有徽章节点，不能遇到徽章就 continue 整条，
     // 必须逐节点判断；徽章节点本身不含下载链接，天然不会触发扫描。
     function handleMutations(records) {
+        // 非 Releases 页面完全不做增量扫描（README/Issues 里的直链不处理），
+        // 但 observer 仍需存活：Turbo 导航到 Releases 后可立即接管。
+        if (!isReleasePage()) return;
         for (const r of records) {
             const added = r.addedNodes;
             for (let i = 0; i < added.length; i++) {
