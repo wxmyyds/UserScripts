@@ -8,6 +8,7 @@
 | --- | --- | --- |
 | [GitHub 高速下载](GHDown/GHDown.user.js) | GitHub 下载加速：Release 文件、源码包、Raw 文件一键提速，支持多镜像切换 | [GreasyFork](https://greasyfork.org/scripts/568823) / [源码](https://raw.githubusercontent.com/wxmyyds/UserScripts/main/GHDown/GHDown.user.js) |
 | [GitHub Release Asset Highlighter](github-release-asset-highlighter/github-release-asset-highlighter.user.js) | 给 GitHub Release 产物按架构、平台、发行版做高亮徽章区分（仅在 Releases 页面生效） | 暂无 / [源码](https://raw.githubusercontent.com/wxmyyds/UserScripts/main/github-release-asset-highlighter/github-release-asset-highlighter.user.js) |
+| [X/Twitter & Discord 实时翻译](lang-translate/lang-translate.user.js) | X/Twitter、Discord、Patreon、Ko-fi 实时翻译：用译文替换原文，右下角图标显示进度（翻译中旋转 / 失败黄色感叹号），点图标切换原文与译文 | 暂无 / [源码](https://raw.githubusercontent.com/wxmyyds/UserScripts/main/lang-translate/lang-translate.user.js) |
 
 ## 📥 安装方法
 
@@ -22,6 +23,8 @@
 │   └── GHDown.user.js
 ├── github-release-asset-highlighter/ # Release 产物高亮
 │   └── github-release-asset-highlighter.user.js
+├── lang-translate/                  # X/Twitter & Discord 实时翻译
+│   └── lang-translate.user.js
 └── README.md
 ```
 
